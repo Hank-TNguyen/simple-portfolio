@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/plugins/flickr/galleria.flickr.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to my portfolio</h1>
+    </header>
+    <section>
+        <h2>About Me</h2>
+        <p>Your description here.</p>
+    </section>
+    <section>
+        <h2>My Skills</h2>
+        <p>Your skills here.</p>
+    </section>
+    <section>
+        <h2>My Work</h2>
+        <!-- Add a div for the Galleria gallery -->
+        <div class="galleria">
+            <!-- Add img tags for each photo you want to include in the gallery -->
+            <img src="images/editted_MG_3131.JPG">
+            <img src="images/editted_MG_3266.JPG">
+        </div>
+        <script>
+            (function() {
+                Galleria.loadTheme('https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.js');
+                Galleria.run('.galleria', {
+                    flickr: 'set:72177720308770566',
+                    flickrOptions: {
+                        sort: 'date-posted-asc',
+                        imageSize: 'original',
+                        thumbSize: 'big'
+                    }
+                });
+            }());
+        </script>  
+    </section>
+    <footer>
+        <p>Contact information and social media links here.</p>
+    </footer>
+</body>
+</html>

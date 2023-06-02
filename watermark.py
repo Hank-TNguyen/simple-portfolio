@@ -1,6 +1,9 @@
 import cv2
 import numpy as np
 import glob
+from PIL import Image
+import piexif
+import os
 
 # Load the watermark image
 watermark = cv2.imread('watermark.png', -1)
@@ -14,7 +17,10 @@ watermark_size_ratio = 0.15
 
 for image_file in image_files:
     # Load the image to be watermarked
-    img = cv2.imread(image_file)
+    img_pil = Image.open(image_file)
+    exif_data = img_pil.info.get('exif', b'')
+    
+    img = cv2.cvtColor(np.array(img_pil), cv2.COLOR_RGB2BGR)
     
     # If the image has two channels, convert it to three channels
     if len(img.shape) < 3:
@@ -60,6 +66,7 @@ for image_file in image_files:
 
     # Combine the new RGB and alpha values into a 4-channel image
     watermarked_img = np.concatenate([new_rgb, new_alpha[..., None]], axis=-1).astype(np.uint8)
-
+    watermarked_img_pil = Image.fromarray(cv2.cvtColor(watermarked_img, cv2.COLOR_BGRA2RGBA))
     # Write out the watermarked image
-    cv2.imwrite('watermarked/watermarked_'+image_file, watermarked_img)
+    watermarked_img_pil = watermarked_img_pil.convert('RGB')
+    watermarked_img_pil.save('watermarked/watermarked_' + os.path.basename(image_file), exif=exif_data)
