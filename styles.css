@@ -67,3 +67,25 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-media,
+.email {
+    margin: 10px;
+}
+
+.social-media a,
+.email a {
+    color: #fff;
+    font-size: 24px;
+}
+
+.social-media a:hover,
+.email a:hover {
+    color: #ffcc00;
+}
