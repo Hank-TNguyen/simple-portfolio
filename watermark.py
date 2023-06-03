@@ -4,12 +4,17 @@ import glob
 from PIL import Image
 import piexif
 import os
+import re
+from tkinter import Tk, filedialog
 
 # Load the watermark image
 watermark = cv2.imread('watermark.png', -1)
 
+Tk().withdraw()
+directory = filedialog.askdirectory(title='Select Image Directory')
+
 # Get a list of all jpg images in the directory
-image_files = glob.glob('images/*.jpg')
+image_files = glob.glob(directory + '/*.jpg')
 
 # Define the margins and watermark size as a ratio of the image size
 margin = 50
@@ -69,4 +74,16 @@ for image_file in image_files:
     watermarked_img_pil = Image.fromarray(cv2.cvtColor(watermarked_img, cv2.COLOR_BGRA2RGBA))
     # Write out the watermarked image
     watermarked_img_pil = watermarked_img_pil.convert('RGB')
-    watermarked_img_pil.save('watermarked/watermarked_' + os.path.basename(image_file), exif=exif_data)
+
+    # Construct the new filename
+    base_filename = os.path.basename(image_file)
+    filename_without_ext = os.path.splitext(base_filename)[0]
+    match = re.search(r'(\d+)$', filename_without_ext)
+    if match:
+        image_number = match.group(1)
+    else:
+        image_number = 'unknown'  # Set a default value if no number is found in the filename
+    new_filename = f'BaoPhotography_{image_number}.jpg'
+
+    # Write out the watermarked image with the new filename
+    watermarked_img_pil.save(f'watermarked/{new_filename}', exif=exif_data)

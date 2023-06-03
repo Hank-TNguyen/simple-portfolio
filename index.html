@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Portfolio</title>
+    <title>BAO Photography | Event Photography in Vancouver</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/twelve/galleria.twelve.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.min.js"></script>
@@ -11,18 +12,20 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to my portfolio</h1>
+        <h1>BAO Photography</h1>
+        <h2>Event Photography in Vancouver</h2>
     </header>
     <section>
         <h2>About Me</h2>
-        <p>Your description here.</p>
+        <p>At BAO Photography, we specialize in capturing the best moments of your events in Vancouver. With our professional photography services, we strive to tell a story through our images, creating lasting memories that you can cherish.</p>
     </section>
     <section>
         <h2>My Skills</h2>
-        <p>Your skills here.</p>
+        <p>With years of experience and a passion for photography, we excel in event photography. Our skills include capturing candid shots, group photos, and documenting the atmosphere and emotions of your special occasions.</p>
     </section>
     <section>
         <h2>My Work</h2>
+
         <!-- Add a div for the Galleria gallery -->
         <div class="galleria">
             <!-- Add img tags for each photo you want to include in the gallery -->
@@ -30,21 +33,33 @@
             <img src="images/editted_MG_3266.JPG">
         </div>
         <script>
-            (function() {
-                Galleria.loadTheme('https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.js');
-                Galleria.run('.galleria', {
-                    flickr: 'set:72177720308770566',
-                    flickrOptions: {
-                        sort: 'date-posted-asc',
-                        imageSize: 'original',
-                        thumbSize: 'big'
-                    }
+            (function load() {
+                themeUrl = "https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.js";
+                // themeUrl = "https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/twelve/galleria.twelve.min.js";
+
+                Galleria.loadTheme(themeUrl);
+
+                var flickr = new Galleria.Flickr();
+                flickr.setOptions({
+                    sort: 'interestingness-desc',
+                    thumbSize: 'big',
+                    imageSize: 'original',
+                    description: 'true'
+                }).set('72177720308771651', function(data) {
+                    console.log(data)
+                    Galleria.run('.galleria', {
+                        dataSource: data
+                    });
                 });
             }());
-        </script>  
+        </script>
     </section>
-    <footer>
-        <p>Contact information and social media links here.</p>
-    </footer>
+    <div class="footer-container">
+        <footer>
+            <p>Contact information and social media links here.</p>
+        </footer>
+    </div>
 </body>
 </html>
+
+
