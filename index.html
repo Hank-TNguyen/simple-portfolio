@@ -3,6 +3,8 @@
 <head>
     <title>BAO Photography | Event Photography in Vancouver</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="icon" href="watermark.png" type="image/png">
+    <link rel="icon" href="watermark.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/twelve/galleria.twelve.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
@@ -12,17 +14,25 @@
 </head>
 <body>
     <header>
-        <h1>BAO Photography</h1>
-        <h2>Event Photography in Vancouver</h2>
+        <div class="logo-container">
+            <img src="watermark.png" alt="BAO Photography Logo" class="logo">
+        </div>
+        <div class="header-content">
+            <h1>Bao Photography</h1>
+        </div>
     </header>
     <section>
-        <h2>About Me</h2>
-        <p>At BAO Photography, we specialize in capturing the best moments of your events in Vancouver. With our professional photography services, we strive to tell a story through our images, creating lasting memories that you can cherish.</p>
+        <h2>About Us</h2>
+        <p>At Bao Photography, we specialize in capturing the best moments of your events in Greater Vancouver area. With our professional photography services, we strive to tell a story through our images, creating lasting memories that you can cherish.</p>
     </section>
     <section>
-        <h2>My Skills</h2>
-        <p>With years of experience and a passion for photography, we excel in event photography. Our skills include capturing candid shots, group photos, and documenting the atmosphere and emotions of your special occasions.</p>
+        <h2>The Meaning Behind "Bao"</h2>
+        <p>The name "Bao" holds a special meaning for me and my family. Bao is not just a name; he is the beloved feline member of our household. He is a tuxedo cat, characterized by his distinctive black and white coat resembling a formal suit. Bao's journey began when he was rescued by the SPCA, and it was in November 2022 that we were fortunate enough to adopt him into our loving home.</p>
+        <p>Bao embodies the spirit of resilience and the transformative power of love and care. Despite his past experiences, he has blossomed into a playful, affectionate, and cherished companion. His presence has brought immense joy and warmth to our lives.</p>
+        <p>The name "Bao" itself has a delightful ring to it, echoing the simplicity and innocence that our furry friend emanates. It is a constant reminder of the incredible impact that compassion and second chances can have on both animals and humans alike.</p>
+        <p>In choosing "Bao Photography" as the name for my photography business, I pay homage to the incredible journey of our feline friend and the bond we share. It is a celebration of life, capturing moments of joy, love, and the beauty found in every precious encounter.</p>
     </section>
+    
     <section>
         <h2>My Work</h2>
 
@@ -46,11 +56,19 @@
                     imageSize: 'original',
                     description: 'true'
                 }).set('72177720308771651', function(data) {
-                    console.log(data)
+                    // console.log(data)
                     Galleria.run('.galleria', {
-                        dataSource: data
+                        dataSource: shuffleList(data)
                     });
                 });
+
+                function shuffleList(list) {
+                    for (let i = list.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [list[i], list[j]] = [list[j], list[i]];
+                    }
+                    return list;
+                }
             }());
         </script>
     </section>

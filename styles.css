@@ -10,20 +10,38 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 20px;
-    text-align: center;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    font-family: 'Parisienne', cursive;
+}
+
+.logo-container {
+    margin-right: 10px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    filter: invert(100%);
+}
+
+.header-content {
+    flex-grow: 1;
 }
 
 h1, h2 {
     margin: 0;
 }
 
+
+
 section {
     margin: 20px;
 }
 
 .galleria {
-    max-width: 100%;
+    max-width: 110%;
     min-height: 300px;
     height: auto;
     margin: 0 auto;
