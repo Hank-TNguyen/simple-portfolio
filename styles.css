@@ -74,6 +74,12 @@ footer {
     align-items: center;
 }
 
+section {
+    margin-bottom: 20px;  /* adjust as needed */
+}
+
+
+
 .social-media,
 .email {
     margin: 10px;

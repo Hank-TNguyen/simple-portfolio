@@ -1,7 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>BAO Photography | Event Photography in Vancouver</title>
+    <meta name="description" content="BAO Photography specializes in event photography in Vancouver. We create lasting memories that you can cherish.">
+    <meta name="keywords" content="Photography, Event Photography, Vancouver, BAO Photography">
+    <meta name="author" content="BAO Photography">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="icon" href="watermark.png" type="image/png">
     <link rel="icon" href="watermark.png" type="image/x-icon">
@@ -12,7 +17,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/plugins/flickr/galleria.flickr.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
 </head>
 <body>
     <header>
@@ -23,59 +27,66 @@
             <h1>Bao Photography</h1>
         </div>
     </header>
-    <section>
-        <h2>About Us</h2>
-        <p>At Bao Photography, we specialize in capturing the best moments of your events in Greater Vancouver area. With our professional photography services, we strive to tell a story through our images, creating lasting memories that you can cherish.</p>
-    </section>
-    <section>
-        <h2>The Meaning Behind "Bao"</h2>
-        <p>The name "Bao" holds a special meaning for me and my family. Bao is not just a name; he is the beloved feline member of our household. He is a tuxedo cat, characterized by his distinctive black and white coat resembling a formal suit. Bao's journey began when he was rescued by the SPCA, and it was in November 2022 that we were fortunate enough to adopt him into our loving home.</p>
-        <p>Bao embodies the spirit of resilience and the transformative power of love and care. Despite his past experiences, he has blossomed into a playful, affectionate, and cherished companion. His presence has brought immense joy and warmth to our lives.</p>
-        <p>The name "Bao" itself has a delightful ring to it, echoing the simplicity and innocence that our furry friend emanates. It is a constant reminder of the incredible impact that compassion and second chances can have on both animals and humans alike.</p>
-        <p>In choosing "Bao Photography" as the name for my photography business, I pay homage to the incredible journey of our feline friend and the bond we share. It is a celebration of life, capturing moments of joy, love, and the beauty found in every precious encounter.</p>
-    </section>
+
+    <main>
+        <section>
+            <h2>About Us</h2>
+            <p>At Bao Photography, we specialize in capturing the best moments of your events in Greater Vancouver area. With our professional photography services, we strive to tell a story through our images, creating lasting memories that you can cherish.</p>
+        </section>
+        <section>
+            <h2>The Meaning Behind "Bao"</h2>
+            <p>The name "Bao" holds a special meaning for me and my family. Bao is not just a name; he is the beloved feline member of our household. He is a tuxedo cat, characterized by his distinctive black and white coat resembling a formal suit. Bao's journey began when he was rescued by the SPCA, and it was in November 2022 that we were fortunate enough to adopt him into our loving home.</p>
+            <p>Bao embodies the spirit of resilience and the transformative power of love and care. Despite his past experiences, he has blossomed into a playful, affectionate, and cherished companion. His presence has brought immense joy and warmth to our lives.</p>
+            <p>The name "Bao" itself has a delightful ring to it, echoing the simplicity and innocence that our furry friend emanates. It is a constant reminder of the incredible impact that compassion and second chances can have on both animals and humans alike.</p>
+            <p>In choosing "Bao Photography" as the name for my photography business, I pay homage to the incredible journey of our feline friend and the bond we share. It is a celebration of life, capturing moments of joy, love, and the beauty found in every precious encounter.</p>
+        </section>
+
+        <section>
+            <h2>My Work</h2>
+            <div class="galleria">
+                <!-- Add img tags for each photo you want to include in the gallery -->
+                <img src="images/editted_MG_3131.JPG">
+                <img src="images/editted_MG_3266.JPG">
+            </div>
+            <script>
+                (function load() {
+                    themeUrl = "https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.js";
+                    // themeUrl = "https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/twelve/galleria.twelve.min.js";
     
-    <section>
-        <h2>My Work</h2>
-
-        <!-- Add a div for the Galleria gallery -->
-        <div class="galleria">
-            <!-- Add img tags for each photo you want to include in the gallery -->
-            <img src="images/editted_MG_3131.JPG">
-            <img src="images/editted_MG_3266.JPG">
-        </div>
-        <script>
-            (function load() {
-                themeUrl = "https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.js";
-                // themeUrl = "https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/twelve/galleria.twelve.min.js";
-
-                Galleria.loadTheme(themeUrl);
-
-                var flickr = new Galleria.Flickr();
-                flickr.setOptions({
-                    sort: 'interestingness-desc',
-                    thumbSize: 'big',
-                    imageSize: 'original',
-                    description: 'true'
-                }).set('72177720308771651', function(data) {
-                    // console.log(data)
-                    Galleria.run('.galleria', {
-                        dataSource: shuffleList(data)
+                    Galleria.loadTheme(themeUrl);
+    
+                    var flickr = new Galleria.Flickr();
+                    flickr.setOptions({
+                        sort: 'interestingness-desc',
+                        thumbSize: 'big',
+                        imageSize: 'original',
+                        description: 'true'
+                    }).set('72177720308771651', function(data) {
+                        // console.log(data)
+                        Galleria.run('.galleria', {
+                            dataSource: shuffleList(data)
+                        });
                     });
-                });
-
-                function shuffleList(list) {
-                    for (let i = list.length - 1; i > 0; i--) {
-                        const j = Math.floor(Math.random() * (i + 1));
-                        [list[i], list[j]] = [list[j], list[i]];
+    
+                    function shuffleList(list) {
+                        for (let i = list.length - 1; i > 0; i--) {
+                            const j = Math.floor(Math.random() * (i + 1));
+                            [list[i], list[j]] = [list[j], list[i]];
+                        }
+                        return list;
                     }
-                    return list;
-                }
-            }());
-        </script>
+                }());
+            </script>
+        </section>
+    </main>
+
+    <section>
+        <h2>Contact Us</h2>
+        <p>Please reach us at <a href="mailto:hanknguyen@baophotos.ca">hanknguyen@baophotos.ca</a> or through our social media platforms.</p>
     </section>
-    <div class="footer-container">
-        <footer>
+
+    <footer>
+        <div class="footer-container">
             <div class="footer-content">
                 <div class="social-media">
                     <a href="https://www.instagram.com/your_instagram_handle" target="_blank" rel="noopener noreferrer">
@@ -88,9 +99,6 @@
                 </div>
             </div>
         </footer>
-        
     </div>
 </body>
 </html>
-
-
