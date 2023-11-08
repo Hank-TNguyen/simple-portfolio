@@ -1,0 +1,9 @@
+.galleria {
+    max-width: 110%;
+    min-height: 300px;
+    height: auto;
+    margin: 0 auto;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
