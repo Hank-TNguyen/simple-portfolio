@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>A Simple Static Site Generateor: Writing Made Easy! | Bao Photography | Photographer @ Vancouver</title>
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D5DSSCQJD0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D5DSSCQJD0');
+</script>
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body style="background-image: url('images/background.png');">
+  <header>
+    <h1>Bao Photography | Photographer @ Vancouver</h1>
+
+  <nav>
+    <ul>
+    <li>
+      <a href="../">Home</a>
+    </li>
+    <li>
+      <a aria-current="page" class="active" href="../about/">About</a>
+    </li>
+    </ul>
+  </nav>
+
+
+  </header>
+  <main>
+    
+  <h1>A Simple Static Site Generateor: Writing Made Easy!</h1>
+
+  
+  
+  <time datetime="2023-07-02T13:54:43-07:00">July 2, 2023</time>
+
+  <h1 id="a-simple-static-site-generator-writing-made-easy">A Simple Static Site Generator: Writing Made Easy!</h1>
+<p>In a world full of Content Management Systems (CMS) like WordPress and Wix, where most solutions rely on backends, I found an exception – <a href="https://gohugo.io/showcase/">Hugo</a>. In this blog, I&rsquo;ll walk you through my journey of implementing a straightforward framework that doesn&rsquo;t require coding expertise.</p>
+<h2 id="the-lightbulb-moment">The Lightbulb Moment</h2>
+<p>My goal was to have a lightweight system that allowed me to focus on writing without the hassle of backend servers and associated costs. While WordPress does offer free options, they often come with complex setups. Little did I know about <a href="https://gohugo.io/showcase/">Hugo</a>, a static site generator that simplifies website creation. I may have been reinventing the wheel, but the learning experience was invaluable.</p>
+<h3 id="my-toolbox">My Toolbox</h3>
+<p>I decided to stick with free tools for my project, making the following assumptions:</p>
+<ol>
+<li>GitHub Pages are free.</li>
+<li>I have a ChatGPT Plus subscription.</li>
+<li>I know my way around frontend technologies (HTML, CSS, JS).</li>
+<li>I have an established brand - <a href="https://baophotos.ca/">BAO Photography</a>.</li>
+</ol>
+<h3 id="lets-get-started">Let&rsquo;s Get Started</h3>
+<p>My approach was to create a framework that generates static HTML pages and host them on GitHub Pages. I would also leverage ChatGPT to do most of the coding heavy lifting. Don&rsquo;t worry; you don&rsquo;t need to be a coding wizard to follow along.</p>
+<h4 id="step-1-creating-a-basic-html-page">Step 1: Creating a Basic HTML Page</h4>
+<p>You can start by asking ChatGPT to generate a basic HTML page with a title and a tagline. Feel free to add your own styles and components. For my blog, I included a container for the list of blog posts.</p>
+<h4 id="step-2-presenting-blog-posts">Step 2: Presenting Blog Posts</h4>
+<p>I decided to present each blog post as an HTML page. I wrote my blog posts in Markdown and used a Python script generated with ChatGPT to convert Markdown to HTML. This script also compiled the list of blog posts and generated a JSON file with post metadata.</p>
+<h4 id="step-3-displaying-posts">Step 3: Displaying Posts</h4>
+<p>To display my blog posts, I populated the container on the main page using the JSON metadata. This process happens relatively dynamically, meaning we load the JSON file and populate the HTML container when the client loads the page. To achieve this, I used iframes to display the posts.</p>
+<h4 id="step-4-writing-blog-posts">Step 4: Writing Blog Posts</h4>
+<p>I created a Powershell script that generates a new blog post file with a predefined template. The script automatically names the file and increments the post number.</p>
+<h4 id="step-5-execute-and-publish">Step 5: Execute and Publish</h4>
+<p>With everything set up, I executed my scripts and pushed the changes to my GitHub repository.</p>
+<h2 id="in-a-nutshell">In a Nutshell</h2>
+<p>This simple framework allowed me to generate static HTML pages and host them on GitHub Pages effortlessly. ChatGPT played a crucial role in automating various tasks, making my life easier. While AI is undoubtedly a powerful tool, I believe that the human touch and creativity will always have a place. It&rsquo;s all about adapting and learning new skills to stay ahead in an ever-changing landscape.</p>
+<p><img src="../overall.png" alt="Overall/"></p>
+<p>So, why spend days on complex setups when you can create your website in an evening? Get creative, write, and let AI do the heavy lifting – it&rsquo;s a win-win situation! 😄</p>
+
+  
+
+
+  </main>
+  <footer>
+    <p>&copy;  BaoPhotography 2023 </p>
+
+  </footer>
+</body>
+</html>
