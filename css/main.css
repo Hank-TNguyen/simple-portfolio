@@ -1,14 +1,15 @@
 /* Base styles for larger screens */
 .galleria {
-    max-width: 110%;
-    min-height: 300px;
-    height: auto;
-    margin: 0 auto;
-    /* display: flex; */
-    justify-content: center;
-    align-items: center;
-  }
-  
+  max-width: 110%;
+  min-height: 300px;
+  height: auto;
+  margin: 0 auto;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Add padding to the component */
+}
+
   /* Reset some default browser styles */
   body, h1, ul, li, a, p {
     margin: 0;
@@ -83,3 +84,20 @@
       align-items: center;
     }
   }
+
+  .title-wrapper {
+    display: flex;
+    align-items: center; /* Vertically center the components */
+    padding: 10px; /* Add padding to the title wrapper */
+
+  }
+  
+  .favicon {
+    margin-right: 10px; /* Add space between the favicon and the title */
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin: 0; /* Remove default margin for h1 element */
+  }
+  
