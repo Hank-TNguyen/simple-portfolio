@@ -1,92 +1,27 @@
 <!DOCTYPE html>
-<html lang="en-us" dir="ltr">
+<html lang="en">
 <head>
-	<meta name="generator" content="Hugo 0.119.0">
-  <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<title>Bao Photography | Photographer @ Vancouver</title>
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D5DSSCQJD0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-D5DSSCQJD0');
-</script>
-<link rel="stylesheet" href="./css/main.css">
-<link rel="icon" type="image/x-icon" href="./images/favicon.ico">
-
-</head>
-<body style="background-image: url('images/background.png');">
-  <header>
-    <div class="title-wrapper">
-    <img src="images/favicon.ico" alt="Favicon" class="favicon">
-    <h1>Bao Photography | Photographer @ Vancouver</h1>
-</div>
-
-  <nav>
-    <ul>
-    <li>
-      <a aria-current="page" class="active" href="./">Home</a>
-    </li>
-    <li>
-      <a href="./about/">About</a>
-    </li>
-    </ul>
-  </nav>
-
-
-  </header>
-  <main>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to Bao Photography - Capturing Moments with Passion">
+    <meta name="keywords" content="photography, Bao Photography, photo gallery, professional photographer">
+    <meta name="author" content="Your Name">
     
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/plugins/flickr/galleria.flickr.min.js"></script>
+    <!-- Include other meta tags as needed for SEO optimization -->
 
-  <div class="galleria">
-  </div>
-  
-  <script>
-      (function load() {
-          themeUrl = "https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.js";
-          
-                      
-          Galleria.loadTheme(themeUrl);
-
-          var flickr = new Galleria.Flickr();
-          flickr.setOptions({
-              sort: 'interestingness-desc',
-              thumbSize: 'big',
-              imageSize: 'original',
-              description: 'true',
-              max: 50
-          }).set('72177720308771651', function(data) {
-              
-              Galleria.run('.galleria', {
-                  dataSource: shuffleList(data)
-              });
-          });
-
-          function shuffleList(list) {
-              for (let i = list.length - 1; i > 0; i--) {
-                  const j = Math.floor(Math.random() * (i + 1));
-                  [list[i], list[j]] = [list[j], list[i]];
-              }
-              return list;
-          }
-      }());
-  </script>
-
-
-  </main>
-  <footer>
-    <p>&copy;  BaoPhotography 2023 </p>
-
-  </footer>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/plugins/flickr/galleria.flickr.min.js"></script>
+    
+    <title>Bao Photography - Capturing Moments with Passion</title>
+</head>
+<body>
+    <div id="loading-placeholder">
+        Loading...
+    </div>
+    <div class="galleria"></div>
+    <script src="index.js"></script>
 </body>
 </html>
