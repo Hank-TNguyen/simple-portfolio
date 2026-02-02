@@ -37,7 +37,10 @@
 
     <!-- Copyright Footer -->
     <footer>
-        <p>&copy; 2023 Bao Photography. All rights reserved.</p>
+        <p>&copy; <span id="current-year"></span> Bao Photography. All rights reserved.</p>
     </footer>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

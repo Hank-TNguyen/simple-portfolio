@@ -58,7 +58,10 @@
 
   </main>
   <footer>
-    <p>&copy;  BaoPhotography 2023 </p>
+    <p>&copy; <span id="current-year"></span> BaoPhotography. All rights reserved.</p>
+    <script>
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 
   </footer>
 </body>

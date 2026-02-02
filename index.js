@@ -19,41 +19,36 @@ document.addEventListener('DOMContentLoaded', function() {
             document.head.appendChild(exifScript);
 
             exifScript.onload = function() {
+                // Fix getScriptPath: with dynamic script loading, $('script:last').attr('src') can be undefined
+                var origGetScriptPath = Galleria.utils.getScriptPath;
+                Galleria.utils.getScriptPath = function(src) {
+                    src = src || (typeof $ !== 'undefined' && $('script[src]').last().attr('src')) || '';
+                    return origGetScriptPath.call(this, src);
+                };
+                // Flickr plugin expects window.JQuery (capital J); jQuery only sets window.jQuery
+                if (window.jQuery && !window.JQuery) window.JQuery = window.jQuery;
                 var flickrScript = document.createElement('script');
                 flickrScript.src = "https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/plugins/flickr/galleria.flickr.min.js";
                 document.head.appendChild(flickrScript);
-
                 flickrScript.onload = function() {
-                    // Hide loading placeholder
                     loadingPlaceholder.style.display = 'none';
 
-                    // Your existing Galleria code
-                    (function load() {
-                        var themeUrl = "https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.js";
-                    
-                        Galleria.loadTheme(themeUrl);
-                    
-                        var flickr = new Galleria.Flickr();
-                        flickr.setOptions({
-                            sort: 'interestingness-desc',
-                            thumbSize: 'big',
-                            imageSize: 'original',
-                            description: 'true',
-                            max: 50
-                        }).set('72177720308771651', function(data) {
-                            Galleria.run('.galleria', {
-                                dataSource: shuffleList(data)
-                            });
-                        });
-                    
-                        function shuffleList(list) {
-                            for (let i = list.length - 1; i > 0; i--) {
-                                const j = Math.floor(Math.random() * (i + 1));
-                                [list[i], list[j]] = [list[j], list[i]];
-                            }
-                            return list;
-                        }
-                    }());
+                    var themeUrl = "https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.js";
+                    Galleria.loadTheme(themeUrl);
+
+                    // Your Flickr API key (baophotography); photoset ID 72177720308771651
+                    var FLICKR_API_KEY = '95a7b666148701836aede2470fcb286b';
+                    var PHOTOSET_ID = '72177720308771651';
+                    var flickr = new Galleria.Flickr(FLICKR_API_KEY);
+                    flickr.setOptions({
+                        sort: 'interestingness-desc',
+                        thumbSize: 'big',
+                        imageSize: 'original',
+                        description: true,
+                        max: 50
+                    }).set(PHOTOSET_ID, function(data) {
+                        Galleria.run('.galleria', { dataSource: data });
+                    });
                 };
             };
         };
